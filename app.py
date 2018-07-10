@@ -11,11 +11,11 @@ def getDynamicByPagination(index, size):
     if res == -1:
         resp = {'code': 200, 'status': 0, 'msg': '获取动态失败'}
     else:
-        if (int(index) +1)*int(size) < service.getDynamicTotalCount():
+        if (int(index) + 1)*int(size) < service.getDynamicTotalCount():
             resp = {'code': 200, 'status': 1, 'msg': '获取动态成功', 'hasmore': 1, 'data': res}
         else:
             resp = {'code': 200, 'status': 1, 'msg': '获取动态成功', 'hasmore': 0, 'data': res}
-    return json.dumps(resp)
+    return json.dumps(resp, ensure_ascii=False)
 
 
 if __name__ == '__main__':
