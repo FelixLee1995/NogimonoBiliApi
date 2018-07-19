@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from flask import Flask
 import service
 import json
@@ -19,4 +21,4 @@ def getDynamicByPagination(index, size):
 
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    app.run(port=5001,host='0.0.0.0')

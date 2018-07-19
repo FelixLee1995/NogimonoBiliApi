@@ -1,0 +1,11 @@
+version: '2'
+services:
+  biliapi:
+    build: .
+    image: nogimono/biliapi
+    environment:
+      - DB_HOST=mongo
+    ports:
+      - 5001:5001
+  mongo:
+    image: 'mongo'
